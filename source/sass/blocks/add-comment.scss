@@ -1,0 +1,25 @@
+.add-comment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.add-comment__title {
+  text-align: center;
+  line-height: 36px;
+}
+
+.add-comment__input-name {
+  padding: 5px;
+}
+
+label:has(.add-comment__input-name),
+label:has(.add-comment__input-content) {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}

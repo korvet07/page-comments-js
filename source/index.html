@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Описание проекта">
+  <title>Page-Comments</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="container"></div>
+    </header>
+    <main>
+      <section class="comments">
+        <div class="container comments__container">
+          <h1 class="comments__title">Комментарии пользователей</h1>
+          <ul class="comments__list" id="container">
+            <li class="comments__item">
+              <div class="comments__wrapper">
+                <h2 class="comments__name">Александр</h2>
+                <button class="comments__delete" type="button">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                    <title></title>
+                    <g>
+                    </g>
+                    <path d="M64 160v320c0 17.6 14.4 32 32 32h288c17.6 0 32-14.4 32-32v-320h-352zM160 448h-32v-224h32v224zM224 448h-32v-224h32v224zM288 448h-32v-224h32v224zM352 448h-32v-224h32v224z"></path>
+                    <path d="M424 64h-104v-40c0-13.2-10.8-24-24-24h-112c-13.2 0-24 10.8-24 24v40h-104c-13.2 0-24 10.8-24 24v40h416v-40c0-13.2-10.8-24-24-24zM288 64h-96v-31.599h96v31.599z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="comments__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sequi atque quis saepe facere autem excepturi, molestias sit, quisquam soluta tenetur recusandae nostrum vel ducimus itaque exercitationem aut perferendis. Odit!</p>
+              <p>Опубликовано: <time class="comments__time" datetime="2023-03-05T08:23:11+07:00">вчера, <span class="comments__time-hours">15:13</span>
+                </time>
+              </p>
+              <span class="comments__likes">Нравится <span class="comments__likes-count">356</span></span>
+            </li>
+            <li class="comments__item">
+              <div class="comments__wrapper">
+                <h2 class="comments__name">Виктор</h2>
+                <button class="comments__delete" type="button">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                    <title></title>
+                    <g>
+                    </g>
+                    <path d="M64 160v320c0 17.6 14.4 32 32 32h288c17.6 0 32-14.4 32-32v-320h-352zM160 448h-32v-224h32v224zM224 448h-32v-224h32v224zM288 448h-32v-224h32v224zM352 448h-32v-224h32v224z"></path>
+                    <path d="M424 64h-104v-40c0-13.2-10.8-24-24-24h-112c-13.2 0-24 10.8-24 24v40h-104c-13.2 0-24 10.8-24 24v40h416v-40c0-13.2-10.8-24-24-24zM288 64h-96v-31.599h96v31.599z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="comments__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sequi atque quis saepe facere autem excepturi, molestias sit, quisquam soluta tenetur recusandae nostrum vel ducimus itaque exercitationem aut perferendis. Odit!</p>
+              <p>Опубликовано: <time class="comments__time" datetime="2023-03-05T08:23:11+07:00">сегодня, <span class="comments__time-hours">10:13</span>
+                </time>
+              </p>
+              <span class="comments__likes">Нравится <span class="comments__likes-count">35</span></span>
+            </li>
+            <li class="comments__item">
+              <div class="comments__wrapper">
+                <h2 class="comments__name">Андрей</h2>
+                <button class="comments__delete" type="button">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                    <title></title>
+                    <g>
+                    </g>
+                    <path d="M64 160v320c0 17.6 14.4 32 32 32h288c17.6 0 32-14.4 32-32v-320h-352zM160 448h-32v-224h32v224zM224 448h-32v-224h32v224zM288 448h-32v-224h32v224zM352 448h-32v-224h32v224z"></path>
+                    <path d="M424 64h-104v-40c0-13.2-10.8-24-24-24h-112c-13.2 0-24 10.8-24 24v40h-104c-13.2 0-24 10.8-24 24v40h416v-40c0-13.2-10.8-24-24-24zM288 64h-96v-31.599h96v31.599z"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="comments__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sequi atque quis saepe facere autem excepturi, molestias sit, quisquam soluta tenetur recusandae nostrum vel ducimus itaque exercitationem aut perferendis. Odit!</p>
+              <p>Опубликовано: <time class="comments__time" datetime="2023-03-05T08:23:11+07:00">сегодня, <span class="comments__time-hours">16:23</span>
+                </time>
+              </p>
+              <span class="comments__likes comments__likes--active">Нравится <span class="comments__likes-count">16</span></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="add-comment">
+        <div class="container">
+          <h2 class="add-comment__title">Добавьте свой комментарий</h2>
+          <form action="https://echo.htmlacademy.ru/" class="add-comment__form" id="form-new-comment" method="post" enctype="multipart/form-data" target="_blank" data-form-validate>
+            <label>Ваше имя:
+              <input class="add-comment__input-name custom-input" type="text" name="comment-name" id="user-name" required placeholder="Введите Имя" minlength="2" autocomplete="on" autofocus pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+            </label>
+            <label>Ваш комментарий:
+              <textarea class="add-comment__input-content custom-textarea" name="comment-text" id="user-comment" cols="50" rows="10" required minlength="2" maxlength="360" autocomplete="on" placeholder="Введите комментарий"></textarea>
+            </label>
+            <label>
+              <input class="add-comment__input-time" type="datetime-local" maxlength="360" name="comment-time" id="user-time">
+            </label>
+            <button class="add-comment__button-submit btn" type="submit">Добавить комментарий</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container"></div>
+    </footer>
+  </div>
+
+  <!-- Шаблон нового комментария -->
+  <template id="new-comment">
+    <li class="comments__item">
+      <div class="comments__wrapper">
+        <h2 class="comments__name"></h2>
+        <button class="comments__delete" type="button">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+            <title></title>
+            <g>
+            </g>
+            <path d="M64 160v320c0 17.6 14.4 32 32 32h288c17.6 0 32-14.4 32-32v-320h-352zM160 448h-32v-224h32v224zM224 448h-32v-224h32v224zM288 448h-32v-224h32v224zM352 448h-32v-224h32v224z"></path>
+            <path d="M424 64h-104v-40c0-13.2-10.8-24-24-24h-112c-13.2 0-24 10.8-24 24v40h-104c-13.2 0-24 10.8-24 24v40h416v-40c0-13.2-10.8-24-24-24zM288 64h-96v-31.599h96v31.599z"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="comments__content"></p>
+      <p >
+        <time class="comments__time"  datetime="2023-03-05T08:23:11+07:00">10:13</time>
+        <span class="comments__time-hours"></span>
+      </p>
+      <span class="comments__likes">Нравится <span class="comments__likes-count">16</span></span>
+    </li>
+  </template>
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
