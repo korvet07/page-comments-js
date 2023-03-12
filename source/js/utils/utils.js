@@ -22,9 +22,11 @@ function getMonthDay(date) {
 
 function correctionMinHour(num) {
   let arrStr = [...String(num)];
+
   if (arrStr.length === 1) {
     return `0${num}`;
   }
+
   return num;
 }
 
