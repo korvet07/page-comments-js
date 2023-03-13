@@ -3,16 +3,16 @@ import {correctionMinHour, getRandomIntInclusive, showMessageDateTime} from '../
 const MAX_AMOUNT_LIKES = 70;
 const form = document.querySelector('#form-new-comment');
 
-function addNewComment(fnLike, fnDel) {
+function addNewComment(fnLike) {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    createNewComment(fnLike, fnDel);
+    createNewComment(fnLike);
   });
 }
 
-function createNewComment(fnLike, fnDel) {
+function createNewComment(fnLike) {
   const comment = document.querySelector('#new-comment').content.querySelector('.comments__item').cloneNode(true);
   const inputName = form.querySelector('.add-comment__input-name');
   const inputTextContent = form.querySelector('.add-comment__input-content');
@@ -23,7 +23,7 @@ function createNewComment(fnLike, fnDel) {
   comment.querySelector('.comments__name').textContent = inputName.value;
   comment.querySelector('.comments__content').textContent = inputTextContent.value;
   comment.querySelector('.comments__likes-count').textContent = getRandomIntInclusive(0, MAX_AMOUNT_LIKES);
-  fnDel(comment.querySelector('.comments__delete'));
+
   fnLike(comment.querySelector('.comments__likes'));
 
   if (!inputTime.value) {

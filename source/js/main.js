@@ -1,31 +1,32 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import addNewComment from './modules/new-comment';
 
-let buttonsDelete = document.querySelectorAll('.comments__delete');
-let likes = document.querySelectorAll('.comments__likes');
+const likes = document.querySelectorAll('.comments__likes');
+const list = document.querySelector('.comments__list');
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
   iosVhFix();
+  addListenerDelete(list);
 
   // Modules
   // ---------------------------------
-  buttonsDelete.forEach((elem) => addListenerDelete(elem));
   likes.forEach((elem) => toggleLikes(elem));
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
 
-    addNewComment(toggleLikes, addListenerDelete);
+    addNewComment(toggleLikes);
   });
 });
 
 
-function addListenerDelete(button) {
-  button.addEventListener('click', (event) => {
+function addListenerDelete(container) {
+  container.addEventListener('click', (event) => {
 
     if (event.target.closest('.comments__delete')) {
       event.target.closest('.comments__item').remove();
