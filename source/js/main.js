@@ -8,7 +8,6 @@ let likes = document.querySelectorAll('.comments__likes');
 window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
-
   iosVhFix();
 
   // Modules
@@ -16,12 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
   buttonsDelete.forEach((elem) => addListenerDelete(elem));
   likes.forEach((elem) => toggleLikes(elem));
 
-  addNewComment(toggleLikes, addListenerDelete);
-
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
 
+    addNewComment(toggleLikes, addListenerDelete);
   });
 });
 

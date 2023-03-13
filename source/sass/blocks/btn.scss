@@ -22,4 +22,10 @@
     opacity: 0.9;
     color: $color-default-black;
   }
+
+  &:focus,
+  &:active {
+    border: none;
+    outline: 3px solid rgb(238, 155, 125);
+  }
 }

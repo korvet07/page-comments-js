@@ -1,5 +1,6 @@
 import {correctionMinHour, getRandomIntInclusive, showMessageDateTime} from '../utils/utils';
 
+const MAX_AMOUNT_LIKES = 70;
 const form = document.querySelector('#form-new-comment');
 
 function addNewComment(fnLike, fnDel) {
@@ -21,7 +22,7 @@ function createNewComment(fnLike, fnDel) {
 
   comment.querySelector('.comments__name').textContent = inputName.value;
   comment.querySelector('.comments__content').textContent = inputTextContent.value;
-  comment.querySelector('.comments__likes-count').textContent = getRandomIntInclusive(0, 70);
+  comment.querySelector('.comments__likes-count').textContent = getRandomIntInclusive(0, MAX_AMOUNT_LIKES);
   fnDel(comment.querySelector('.comments__delete'));
   fnLike(comment.querySelector('.comments__likes'));
 
