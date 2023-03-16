@@ -83,15 +83,15 @@
       <section class="add-comment">
         <div class="container">
           <h2 class="add-comment__title">Добавьте свой комментарий</h2>
-          <form action="https://echo.htmlacademy.ru/" class="add-comment__form" id="form-new-comment" method="post" enctype="multipart/form-data" target="_blank" data-form-validate>
+          <form action="https://echo.htmlacademy.ru/" class="add-comment__form" name="new_comment" id="form-new-comment" method="post" enctype="multipart/form-data" target="_blank" data-form-validate>
             <label>Ваше имя:
-              <input class="add-comment__input-name custom-input" type="text" name="comment-name" id="user-name" required placeholder="Введите Имя" minlength="2" autocomplete="on" autofocus pattern="^[A-Za-zА-Яа-яЁё\s]+$">
+              <input class="add-comment__input-name custom-input" type="text" name="comment_name" id="user-name" required placeholder="Введите Имя" minlength="2" autocomplete="on" autofocus pattern="^[A-Za-zА-Яа-яЁё\s]+$">
             </label>
             <label>Ваш комментарий:
-              <textarea class="add-comment__input-content custom-textarea" name="comment-text" id="user-comment" cols="50" rows="10" required minlength="2" maxlength="360" autocomplete="on" placeholder="Введите комментарий"></textarea>
+              <textarea class="add-comment__input-content custom-textarea" name="comment_text" id="user-comment" cols="50" rows="10" required minlength="2" maxlength="360" autocomplete="on" placeholder="Введите комментарий"></textarea>
             </label>
             <label>
-              <input class="add-comment__input-time" type="datetime-local" maxlength="360" name="comment-time" id="user-time">
+              <input class="add-comment__input-time" type="datetime-local" maxlength="360" name="comment_time" id="user-time">
             </label>
             <button class="add-comment__button-submit btn" type="submit">Добавить комментарий</button>
           </form>

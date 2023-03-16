@@ -1,7 +1,7 @@
 import {correctionMinHour, getRandomIntInclusive, showMessageDateTime} from '../utils/utils';
 
 const MAX_AMOUNT_LIKES = 70;
-const form = document.querySelector('#form-new-comment');
+const form = document.forms.new_comment;
 
 function addNewComment(fnLike) {
 
@@ -14,9 +14,9 @@ function addNewComment(fnLike) {
 
 function createNewComment(fnLike) {
   const comment = document.querySelector('#new-comment').content.querySelector('.comments__item').cloneNode(true);
-  const inputName = form.querySelector('.add-comment__input-name');
-  const inputTextContent = form.querySelector('.add-comment__input-content');
-  const inputTime = form.querySelector('.add-comment__input-time');
+  const inputName = form.elements.comment_name;
+  const inputTextContent = form.elements.comment_text;
+  const inputTime = form.elements.comment_time;
   const container = document.querySelector('.comments__list');
   const elementFragment = document.createDocumentFragment();
 
