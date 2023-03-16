@@ -14,7 +14,7 @@ function dropHMS(date) {
   date.setSeconds(0, 0);
 }
 
-function getMonthDay(date) {
+function getMonthDate(date) {
   let month = ['Янв.', 'Фев.', 'Мар.', 'Апр.', 'Мая', 'Июня', 'Июля', 'Авг.', 'Сент.', 'Окт.', 'Нояб.', 'Дек.'];
 
   return month[date.getMonth()];
@@ -54,7 +54,7 @@ function showMessageDateTime(dateTime) {
 
       return `вчера, ${correctionMinHour(dateTimeHours)}:${correctionMinHour(dateTimeMin)}`;
     }
-    return `${roomLastMessageDate.getDate()} ${getMonthDay(roomLastMessageDate)}, ${correctionMinHour(dateTimeHours)}:${correctionMinHour(dateTimeMin)}`;
+    return `${roomLastMessageDate.getDate()} ${getMonthDate(roomLastMessageDate)}, ${correctionMinHour(dateTimeHours)}:${correctionMinHour(dateTimeMin)}`;
   }
 };
 
