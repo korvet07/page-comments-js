@@ -104,8 +104,6 @@
 }
 
 label:has(>.custom-textarea.is-invalid) {
-  position: relative;
-
   &::after {
     position: relative;
     content: "Заполните это обязательное поле";
