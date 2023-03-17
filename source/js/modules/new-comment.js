@@ -17,6 +17,7 @@ inputTextContent.addEventListener('focus', (event) => {
 inputTextContent.addEventListener('blur', () => {
   validateInputTextContent();
 });
+
 function addNewComment(fnLike) {
 
   form.addEventListener('submit', (event) => {
@@ -33,7 +34,6 @@ function addNewComment(fnLike) {
 
 function createNewComment(fnLike) {
   const comment = document.querySelector('#new-comment').content.querySelector('.comments__item').cloneNode(true);
-
   const inputTime = form.elements.comment_time;
   const container = document.querySelector('.comments__list');
   const elementFragment = document.createDocumentFragment();
@@ -55,27 +55,36 @@ function createNewComment(fnLike) {
 
   form.reset();
 }
+
 function validateInputName() {
   const regularExpression = /^[A-Za-zА-Яа-яЁё\s]+$/;
+
   if (regularExpression.test(inputName.value) && inputName.value.length > 2) {
     inputName.classList.add('is-valid');
     inputName.classList.remove('is-invalid');
+
     return true;
   } else {
     inputName.classList.add('is-invalid');
     inputName.classList.remove('is-valid');
+
     return false;
   }
 }
+
 function validateInputTextContent() {
+
   if (inputTextContent.value.length > 2) {
     inputTextContent.classList.add('is-valid');
     inputTextContent.classList.remove('is-invalid');
+
     return true;
   } else {
     inputTextContent.classList.add('is-invalid');
     inputTextContent.classList.remove('is-valid');
+
     return false;
   }
 }
+
 export default addNewComment;

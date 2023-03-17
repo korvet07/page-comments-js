@@ -111,7 +111,6 @@ label:has(>.custom-textarea.is-invalid) {
     content: "Заполните это обязательное поле";
     color: $color-torch-red;
     top: 5px;
-    right: 0;
   }
 }
 
@@ -121,6 +120,5 @@ label:has(>.custom-input.is-invalid) {
     content: "Заполните это обязательное поле(только рус. и лат. буквы)";
     color: $color-torch-red;
     top: 5px;
-    right: 0;
   }
 }
