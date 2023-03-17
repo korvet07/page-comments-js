@@ -69,26 +69,22 @@
     }
   }
 
-  &.is-invalid {
-    input,
-    textarea {
-      border: 2px solid #ff1553;
 
-      &:focus,
-      &:hover {
-        border: 2px solid rgba(#ff1553, 0.5);
-      }
+  &.is-valid {
+    border: 2px solid #22b259;
+
+    &:focus,
+    &:hover {
+      border: 2px solid rgba(#22b259, 0.5);
     }
   }
 
-  &.is-valid {
-    input {
-      border: 2px solid #22b259;
+  &.is-invalid {
+    border: 2px solid #ff1553;
 
-      &:focus,
-      &:hover {
-        border: 2px solid rgba(#22b259, 0.5);
-      }
+    &:focus,
+    &:hover {
+      border: 2px solid rgba(#ff1553, 0.5);
     }
   }
 
@@ -104,5 +100,27 @@
     &.is-valid {
       color: #15ab07;
     }
+  }
+}
+
+label:has(>.custom-textarea.is-invalid) {
+  position: relative;
+
+  &::after {
+    position: relative;
+    content: "Заполните это обязательное поле";
+    color: $color-torch-red;
+    top: 5px;
+    right: 0;
+  }
+}
+
+label:has(>.custom-input.is-invalid) {
+  &::after {
+    position: relative;
+    content: "Заполните это обязательное поле(только рус. и лат. буквы)";
+    color: $color-torch-red;
+    top: 5px;
+    right: 0;
   }
 }

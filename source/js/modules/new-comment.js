@@ -2,20 +2,38 @@ import {correctionMinHour, getRandomIntInclusive, showMessageDateTime} from '../
 
 const MAX_AMOUNT_LIKES = 70;
 const form = document.forms.new_comment;
+const inputName = form.elements.comment_name;
+const inputTextContent = form.elements.comment_text;
 
+inputName.addEventListener('blur', () => {
+  validateInputName();
+});
+inputName.addEventListener('focus', (event) => {
+  event.currentTarget.classList.remove('is-invalid');
+});
+inputTextContent.addEventListener('focus', (event) => {
+  event.currentTarget.classList.remove('is-invalid');
+});
+inputTextContent.addEventListener('blur', () => {
+  validateInputTextContent();
+});
 function addNewComment(fnLike) {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    createNewComment(fnLike);
+    if (validateInputName() && validateInputTextContent()) {
+      createNewComment(fnLike);
+      inputName.classList.remove('is-valid');
+      inputTextContent.classList.remove('is-valid');
+    }
+
   });
 }
 
 function createNewComment(fnLike) {
   const comment = document.querySelector('#new-comment').content.querySelector('.comments__item').cloneNode(true);
-  const inputName = form.elements.comment_name;
-  const inputTextContent = form.elements.comment_text;
+
   const inputTime = form.elements.comment_time;
   const container = document.querySelector('.comments__list');
   const elementFragment = document.createDocumentFragment();
@@ -37,5 +55,27 @@ function createNewComment(fnLike) {
 
   form.reset();
 }
-
+function validateInputName() {
+  const regularExpression = /^[A-Za-zА-Яа-яЁё\s]+$/;
+  if (regularExpression.test(inputName.value) && inputName.value.length > 2) {
+    inputName.classList.add('is-valid');
+    inputName.classList.remove('is-invalid');
+    return true;
+  } else {
+    inputName.classList.add('is-invalid');
+    inputName.classList.remove('is-valid');
+    return false;
+  }
+}
+function validateInputTextContent() {
+  if (inputTextContent.value.length > 2) {
+    inputTextContent.classList.add('is-valid');
+    inputTextContent.classList.remove('is-invalid');
+    return true;
+  } else {
+    inputTextContent.classList.add('is-invalid');
+    inputTextContent.classList.remove('is-valid');
+    return false;
+  }
+}
 export default addNewComment;
