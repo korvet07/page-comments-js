@@ -59,7 +59,7 @@ function createNewComment(fnLike) {
 function validateInputName() {
   const regularExpression = /^[A-Za-zА-Яа-яЁё\s]+$/;
 
-  if (regularExpression.test(inputName.value) && inputName.value.length > 2) {
+  if (regularExpression.test(inputName.value) && inputName.value.trim().length > 2) {
     inputName.classList.add('is-valid');
     inputName.classList.remove('is-invalid');
 
@@ -74,7 +74,7 @@ function validateInputName() {
 
 function validateInputTextContent() {
 
-  if (inputTextContent.value.length > 2) {
+  if (inputTextContent.value.trim().length > 2) {
     inputTextContent.classList.add('is-valid');
     inputTextContent.classList.remove('is-invalid');
 
