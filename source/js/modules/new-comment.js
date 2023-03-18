@@ -32,6 +32,8 @@ function addNewComment(fnLike) {
       createNewComment(fnLike);
       inputName.classList.remove('is-valid');
       inputTextContent.classList.remove('is-valid');
+
+      form.reset();
     }
 
   });
@@ -57,8 +59,6 @@ function createNewComment(fnLike) {
   }
   elementFragment.append(comment);
   container.prepend(elementFragment);
-
-  form.reset();
 }
 
 function validateInputName() {
