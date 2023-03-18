@@ -5,18 +5,23 @@ const form = document.forms.new_comment;
 const inputName = form.elements.comment_name;
 const inputTextContent = form.elements.comment_text;
 
-inputName.addEventListener('blur', () => {
-  validateInputName();
-});
-inputName.addEventListener('focus', (event) => {
-  event.currentTarget.classList.remove('is-invalid');
-});
-inputTextContent.addEventListener('focus', (event) => {
-  event.currentTarget.classList.remove('is-invalid');
-});
-inputTextContent.addEventListener('blur', () => {
-  validateInputTextContent();
-});
+form.addEventListener('blur', (event) => {
+
+  if (event.target.matches('.add-comment__input-name')) {
+    validateInputName();
+  }
+  if (event.target.matches('.add-comment__input-content')) {
+    validateInputTextContent();
+  }
+}, true);
+
+form.addEventListener('focus', (event) => {
+
+  if (event.target.matches('.add-comment__input-name') || event.target.matches('.add-comment__input-content')) {
+    event.target.classList.remove('is-invalid');
+  }
+}, true);
+
 
 function addNewComment(fnLike) {
 
