@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
 
-    addNewComment(toggleLikes);
+    addNewComment(toggleLikes, list);
   });
 });
 
@@ -37,13 +37,13 @@ function toggleLikes(like) {
     like.classList.toggle('comments__likes--active');
 
     if (event.target.closest('.comments__likes--active')) {
-      let count = Number(like.querySelector('.comments__likes-count').textContent);
+      let count = like.querySelector('.comments__likes-count').textContent;
       count = ++count;
-      like.querySelector('.comments__likes-count').textContent = String(count);
+      like.querySelector('.comments__likes-count').textContent = count;
     } else {
-      let count = Number(like.querySelector('.comments__likes-count').textContent);
+      let count = like.querySelector('.comments__likes-count').textContent;
       count = --count;
-      like.querySelector('.comments__likes-count').textContent = String(count);
+      like.querySelector('.comments__likes-count').textContent = count;
     }
   });
 }

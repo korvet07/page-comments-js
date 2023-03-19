@@ -23,13 +23,13 @@ form.addEventListener('focus', (event) => {
 }, true);
 
 
-function addNewComment(fnLike) {
+function addNewComment(fnLike, container) {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (validateInputName() && validateInputTextContent()) {
-      createNewComment(fnLike);
+      createNewComment(fnLike, container);
       inputName.classList.remove('is-valid');
       inputTextContent.classList.remove('is-valid');
 
@@ -39,10 +39,9 @@ function addNewComment(fnLike) {
   });
 }
 
-function createNewComment(fnLike) {
+function createNewComment(fnLike, container) {
   const comment = document.querySelector('#new-comment').content.querySelector('.comments__item').cloneNode(true);
   const inputTime = form.elements.comment_time;
-  const container = document.querySelector('.comments__list');
   const elementFragment = document.createDocumentFragment();
 
   comment.querySelector('.comments__name').textContent = inputName.value;
@@ -57,6 +56,7 @@ function createNewComment(fnLike) {
   } else {
     comment.querySelector('time').textContent = `Опубликовано: ${showMessageDateTime(inputTime.value)}`;
   }
+
   elementFragment.append(comment);
   container.prepend(elementFragment);
 }
