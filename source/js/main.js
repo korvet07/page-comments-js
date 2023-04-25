@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Modules
   // ---------------------------------
   likes.forEach((elem) => toggleLikes(elem));
-  addListenerDelete(list);
+  addListenerDelete();
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
@@ -23,8 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function addListenerDelete(container) {
-  container.addEventListener('click', (event) => {
+function addListenerDelete() {
+  list.addEventListener('click', (event) => {
 
     if (event.target.closest('.comments__delete')) {
       event.target.closest('.comments__item').remove();
